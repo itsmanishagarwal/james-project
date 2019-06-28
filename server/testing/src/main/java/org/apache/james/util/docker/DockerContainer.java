@@ -81,6 +81,11 @@ public class DockerContainer implements TestRule {
         return this;
     }
 
+    public DockerContainer withLogConsumer(Consumer<OutputFrame> consumer) {
+        container.withLogConsumer(consumer);
+        return this;
+    }
+
     public DockerContainer withEnv(String key, String value) {
         container.addEnv(key, value);
         return this;
